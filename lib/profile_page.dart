@@ -6,10 +6,10 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE0F7FA),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFFE0F7FA),
         elevation: 0,
-        automaticallyImplyLeading: false,
         title: const Text(
           'Profile',
           style: TextStyle(color: Colors.black),
@@ -30,93 +30,13 @@ class ProfileScreen extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              // Profile picture and name
-              Column(
-                children: [
-                  Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: Colors.white, width: 3),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(17),
-                      child: Image.asset(
-                        'assets/profile.jpg',
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            color: Colors.grey.shade200,
-                            child: const Icon(Icons.error, color: Colors.red),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  const Text(
-                    "Rajat Raj",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
+              _buildProfileHeader(),
               const SizedBox(height: 20),
-
-              // Stats card
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    _buildStatItem("Age", "22"),
-                    _buildDivider(),
-                    _buildStatItem("Height", "176"),
-                    _buildDivider(),
-                    _buildStatItem("Weight", "79"),
-                    _buildDivider(),
-                    _buildStatItem("Blood", "A+"),
-                  ],
-                ),
-              ),
+              _buildStatsCard(),
               const SizedBox(height: 20),
-
-              // Check-up history section
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Check-Up History",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF6750A4),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
-                      children: [
-                        Text(
-                          "view all",
-                          style: TextStyle(color: Colors.purple.shade400),
-                        ),
-                        Icon(Icons.keyboard_arrow_down,
-                            color: Colors.purple.shade400),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+              _buildCheckupHeader(),
               const SizedBox(height: 10),
-
-              // History cards
-              Flexible(
+              Expanded(
                 child: ListView(
                   children: [
                     _buildHistoryCard(
@@ -124,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
                       iconColor: Colors.red,
                       title: "Fever",
                       date: "27 May, 2025",
-                      symptoms: ["Temp(medium)", "Headache(medium)"],
+                      symptoms: ["Temp (medium)", "Headache (medium)"],
                       note: "Need little bit of rest!!",
                     ),
                     const SizedBox(height: 16),
@@ -143,6 +63,71 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildProfileHeader() {
+    return Column(
+      children: [
+        Container(
+          width: 120,
+          height: 120,
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: Colors.white, width: 3),
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(17),
+            child: Image.asset(
+              'assets/profile.jpg',
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: Colors.grey.shade200,
+                  child: const Icon(Icons.error, color: Colors.red),
+                );
+              },
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
+        const Text(
+          "Rajat Raj",
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStatsCard() {
+    return Container(
+      decoration: BoxDecoration(
+        color: const Color(0xFFFFFFFF),
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x1F000000),
+            blurRadius: 8,
+            offset: Offset(0, 3),
+          )
+        ],
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _buildStatItem("Gender", "Male"),
+          _buildDivider(),
+          _buildStatItem("Age", "22"),
+          _buildDivider(),
+          _buildStatItem("Height", "176"),
+          _buildDivider(),
+          _buildStatItem("Weight", "60"),
+          _buildDivider(),
+          _buildStatItem("Blood", "O+"),
+        ],
       ),
     );
   }
@@ -167,6 +152,34 @@ class ProfileScreen extends StatelessWidget {
     return Container(height: 40, width: 1, color: Colors.grey.shade300);
   }
 
+  Widget _buildCheckupHeader() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const Text(
+          "Check-Up History",
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            color: Color(0xFF6750A4),
+          ),
+        ),
+        TextButton(
+          onPressed: () {},
+          child: Row(
+            children: [
+              Text(
+                "view all",
+                style: TextStyle(color: Colors.purple.shade400),
+              ),
+              Icon(Icons.keyboard_arrow_down, color: Colors.purple.shade400),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildHistoryCard({
     required IconData icon,
     required Color iconColor,
@@ -179,6 +192,13 @@ class ProfileScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x1F000000),
+            blurRadius: 8,
+            offset: Offset(0, 3),
+          )
+        ],
       ),
       padding: const EdgeInsets.all(16),
       child: Column(
@@ -207,6 +227,7 @@ class ProfileScreen extends StatelessWidget {
           if (symptoms.isNotEmpty) ...[
             const SizedBox(height: 12),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Symptoms: ",
@@ -217,8 +238,8 @@ class ProfileScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: symptoms.map((symptom) {
                       return Padding(
-                        padding: const EdgeInsets.only(left: 16),
-                        child: Text(symptom),
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Text("• $symptom"),
                       );
                     }).toList(),
                   ),
@@ -230,7 +251,7 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 12),
             Text(note, style: TextStyle(color: Colors.blue.shade300)),
           ],
-          const SizedBox(height: 8),
+          const SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

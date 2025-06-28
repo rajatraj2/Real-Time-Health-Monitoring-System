@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">347677877809</string>
+    <string name="google_api_key" translatable="false">AIzaSyCfv7JiXHC4OuoIUGMoCRVlBqImYSHY-LY</string>
+    <string name="google_app_id" translatable="false">1:347677877809:android:ca4375354319cf7ec11710</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCfv7JiXHC4OuoIUGMoCRVlBqImYSHY-LY</string>
+    <string name="google_storage_bucket" translatable="false">dih-healthapp.firebasestorage.app</string>
+    <string name="project_id" translatable="false">dih-healthapp</string>
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+</resources>

@@ -1,6 +1,6 @@
 name: dih
 description: A medical profile UI implementation
-publish_to: 'none' # This means it won't be published to pub.dev
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -9,9 +9,17 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^6.0.0
+  lucide_icons: ^0.257.0
+  fl_chart: ^0.68.0
+  firebase_core: ^3.14.0
   cupertino_icons: ^1.0.2
   intl: ^0.18.1
-  fl_chart: ^0.66.2
+  flutter_svg: ^2.2.0
+  speech_to_text: ^6.3.0
+  http: ^1.2.1
+  flutter_dotenv: ^5.2.1
+  animate_do: ^4.2.0
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +31,51 @@ flutter:
 
   assets:
     - assets/
+    - .env
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/Poppins-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Poppins-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Poppins-BlackItalic.ttf
+          weight: 900
+          style: italic

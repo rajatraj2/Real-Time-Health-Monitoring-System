@@ -1,5 +1,6 @@
+import 'package:dih/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'nav_bar.dart'; // ✅ Import NavBar after login
+import 'package:animate_do/animate_do.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -30,9 +31,18 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                FadeInDown(
+                  duration: const Duration(milliseconds: 1000),
+                  child: Image.asset(
+                    'assets/logu.png',
+                    height: MediaQuery.of(context).size.height * 0.15,
+                  ),
+                ),
+                const SizedBox(height: 30),
                 const Text(
                   "Welcome to DIH",
                   style: TextStyle(
+                    fontFamily: 'Poppins',
                     color: Colors.white,
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -72,19 +82,20 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {},
                     child: const Text(
                       "Forgot Password?",
-                      style: TextStyle(color: Colors.white70),
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: Colors.white70,
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // ✅ Navigate to NavBar after login
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const NavBar(),
-                      ),
+                          builder: (context) => CustomBottomNavBar()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -98,14 +109,23 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
-                  child: const Text("Login", style: TextStyle(fontSize: 16)),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 30),
                 TextButton(
                   onPressed: () {},
                   child: const Text(
                     "Don't have an account? Sign Up",
-                    style: TextStyle(color: Colors.white70),
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      color: Colors.white70,
+                    ),
                   ),
                 ),
               ],
@@ -126,12 +146,18 @@ class _LoginPageState extends State<LoginPage> {
     return TextField(
       controller: controller,
       obscureText: obscure,
-      style: const TextStyle(color: Colors.white),
+      style: const TextStyle(
+        fontFamily: 'Poppins',
+        color: Colors.white,
+      ),
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white.withOpacity(0.2),
         hintText: hint,
-        hintStyle: const TextStyle(color: Colors.white70),
+        hintStyle: const TextStyle(
+          fontFamily: 'Poppins',
+          color: Colors.white70,
+        ),
         prefixIcon: Icon(icon, color: Colors.white70),
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
