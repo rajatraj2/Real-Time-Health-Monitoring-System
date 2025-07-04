@@ -24,7 +24,7 @@ class DiseaseHistoryScreen extends StatelessWidget {
             icon: const Icon(Icons.picture_as_pdf, color: Colors.black),
             tooltip: 'Export PDF',
             onPressed: () async {
-              await PDFGenerator.generateAndSharePDF();
+              // await PDFGenerator.generateAndSharePDF();
             },
           )
         ],
@@ -70,12 +70,12 @@ class DiseaseHistoryScreen extends StatelessWidget {
                         },
                       ),
                     ),
-                    leftTitles:
-                        const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                    topTitles:
-                        const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                    rightTitles:
-                        const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    leftTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false)),
+                    topTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false)),
+                    rightTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false)),
                   ),
                   gridData: const FlGridData(show: false),
                   borderData: FlBorderData(show: false),
