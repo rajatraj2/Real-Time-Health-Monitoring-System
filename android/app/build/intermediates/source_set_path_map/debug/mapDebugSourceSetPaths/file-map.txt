@@ -1,0 +1,40 @@
+com.example.dih.app-jetified-credentials-play-services-auth-1.2.0-rc01-0 C:\Users\rajat\.gradle\caches\8.12\transforms\12f6cc353f28bbde8d14ef6c5e49f21f\transformed\jetified-credentials-play-services-auth-1.2.0-rc01\res
+com.example.dih.app-lifecycle-viewmodel-2.7.0-1 C:\Users\rajat\.gradle\caches\8.12\transforms\292f22b8a022cb1aeb50f0aa4de7eabc\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.dih.app-jetified-annotation-experimental-1.4.0-2 C:\Users\rajat\.gradle\caches\8.12\transforms\3e94af8c42464716e506a7d32ee7670d\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.dih.app-fragment-1.7.1-3 C:\Users\rajat\.gradle\caches\8.12\transforms\3ee1d8dc09712d7147cd03c5f61977e9\transformed\fragment-1.7.1\res
+com.example.dih.app-jetified-core-common-2.0.3-4 C:\Users\rajat\.gradle\caches\8.12\transforms\4155a7837f46b3e5cdaca8a54456992c\transformed\jetified-core-common-2.0.3\res
+com.example.dih.app-lifecycle-livedata-core-2.7.0-5 C:\Users\rajat\.gradle\caches\8.12\transforms\4335f34056066d01ceeb1863f61f9205\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.dih.app-core-runtime-2.2.0-6 C:\Users\rajat\.gradle\caches\8.12\transforms\44e52c5eec30ade4b8bf9dc2ad3a7067\transformed\core-runtime-2.2.0\res
+com.example.dih.app-jetified-credentials-1.2.0-rc01-7 C:\Users\rajat\.gradle\caches\8.12\transforms\4d26e6faa8a998b86597367a8bab072b\transformed\jetified-credentials-1.2.0-rc01\res
+com.example.dih.app-jetified-savedstate-1.2.1-8 C:\Users\rajat\.gradle\caches\8.12\transforms\58427f8f06d1adbb43aaa014e575b3ad\transformed\jetified-savedstate-1.2.1\res
+com.example.dih.app-lifecycle-runtime-2.7.0-9 C:\Users\rajat\.gradle\caches\8.12\transforms\59a9d157ebc9502c98ddce4694052d83\transformed\lifecycle-runtime-2.7.0\res
+com.example.dih.app-jetified-ads-adservices-1.1.0-beta11-10 C:\Users\rajat\.gradle\caches\8.12\transforms\64861f2a44b88c17047a771a9620d046\transformed\jetified-ads-adservices-1.1.0-beta11\res
+com.example.dih.app-jetified-ads-adservices-java-1.1.0-beta11-11 C:\Users\rajat\.gradle\caches\8.12\transforms\6a8caddc6f0d8f27618921b2532cb4e7\transformed\jetified-ads-adservices-java-1.1.0-beta11\res
+com.example.dih.app-browser-1.4.0-12 C:\Users\rajat\.gradle\caches\8.12\transforms\6ca62a6fbc0238b5888a81195f836659\transformed\browser-1.4.0\res
+com.example.dih.app-jetified-window-1.2.0-13 C:\Users\rajat\.gradle\caches\8.12\transforms\7391edee02c9b50a0990a9da493e7103\transformed\jetified-window-1.2.0\res
+com.example.dih.app-core-1.13.1-14 C:\Users\rajat\.gradle\caches\8.12\transforms\76c11a012d7540664dd2b0b7d8f8ff2b\transformed\core-1.13.1\res
+com.example.dih.app-jetified-play-services-basement-18.5.0-15 C:\Users\rajat\.gradle\caches\8.12\transforms\773dfbd25a4e4ba15fcf2b842def8d82\transformed\jetified-play-services-basement-18.5.0\res
+com.example.dih.app-jetified-play-services-base-18.5.0-16 C:\Users\rajat\.gradle\caches\8.12\transforms\81a237b3a918f40140adc1030e4dee8c\transformed\jetified-play-services-base-18.5.0\res
+com.example.dih.app-jetified-firebase-common-21.0.0-17 C:\Users\rajat\.gradle\caches\8.12\transforms\8fdf40585b084da4331cc1b7a88d2e8a\transformed\jetified-firebase-common-21.0.0\res
+com.example.dih.app-jetified-window-java-1.2.0-18 C:\Users\rajat\.gradle\caches\8.12\transforms\93fd645058c15f052f8970700c61f5d1\transformed\jetified-window-java-1.2.0\res
+com.example.dih.app-jetified-activity-1.8.1-19 C:\Users\rajat\.gradle\caches\8.12\transforms\966755f410a50ef4a2eaaa577746cf71\transformed\jetified-activity-1.8.1\res
+com.example.dih.app-jetified-profileinstaller-1.3.1-20 C:\Users\rajat\.gradle\caches\8.12\transforms\9bb1f3d9defc04af4593ea65f6d559b2\transformed\jetified-profileinstaller-1.3.1\res
+com.example.dih.app-jetified-lifecycle-livedata-core-ktx-2.7.0-21 C:\Users\rajat\.gradle\caches\8.12\transforms\b026355d181636b218d8a8bd2a6951f8\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.example.dih.app-jetified-lifecycle-process-2.7.0-22 C:\Users\rajat\.gradle\caches\8.12\transforms\b2355aee0dc2047ad835fd37287d536e\transformed\jetified-lifecycle-process-2.7.0\res
+com.example.dih.app-jetified-tracing-1.2.0-23 C:\Users\rajat\.gradle\caches\8.12\transforms\b579379573f6bb313e3c9d2afe56ddd9\transformed\jetified-tracing-1.2.0\res
+com.example.dih.app-jetified-core-ktx-1.13.1-24 C:\Users\rajat\.gradle\caches\8.12\transforms\b5f102ed1135f1d22f4c6de46c70b4a6\transformed\jetified-core-ktx-1.13.1\res
+com.example.dih.app-jetified-startup-runtime-1.1.1-25 C:\Users\rajat\.gradle\caches\8.12\transforms\d3da340d7ab551dcd906489823780d53\transformed\jetified-startup-runtime-1.1.1\res
+com.example.dih.app-jetified-play-services-auth-20.7.0-26 C:\Users\rajat\.gradle\caches\8.12\transforms\e4cd70834a7bbf144f7b7c239e4b3bf5\transformed\jetified-play-services-auth-20.7.0\res
+com.example.dih.app-lifecycle-livedata-2.7.0-27 C:\Users\rajat\.gradle\caches\8.12\transforms\edce046be04b66fc8d249dd5840f21c8\transformed\lifecycle-livedata-2.7.0\res
+com.example.dih.app-jetified-core-1.0.0-28 C:\Users\rajat\.gradle\caches\8.12\transforms\ee2660cc14c95e2188f7c9875e48da8c\transformed\jetified-core-1.0.0\res
+com.example.dih.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-29 C:\Users\rajat\.gradle\caches\8.12\transforms\fe252191168519fcc756328b1a30d17a\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.dih.app-debug-30 C:\Users\rajat\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-3.14.0\android\build\intermediates\packaged_res\debug\packageDebugResources
+com.example.dih.app-debug-31 C:\Users\rajat\AppData\Local\Pub\Cache\hosted\pub.dev\path_provider_android-2.2.17\android\build\intermediates\packaged_res\debug\packageDebugResources
+com.example.dih.app-debug-32 C:\Users\rajat\AppData\Local\Pub\Cache\hosted\pub.dev\speech_to_text-6.6.2\android\build\intermediates\packaged_res\debug\packageDebugResources
+com.example.dih.app-pngs-33 D:\NIT Project\DIH\dih\android\app\build\generated\res\pngs\debug
+com.example.dih.app-resValues-34 D:\NIT Project\DIH\dih\android\app\build\generated\res\resValues\debug
+com.example.dih.app-packageDebugResources-35 D:\NIT Project\DIH\dih\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.dih.app-packageDebugResources-36 D:\NIT Project\DIH\dih\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.dih.app-debug-37 D:\NIT Project\DIH\dih\android\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.dih.app-debug-38 D:\NIT Project\DIH\dih\android\app\src\debug\res
+com.example.dih.app-main-39 D:\NIT Project\DIH\dih\android\app\src\main\res

@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:dih/home_screen.dart';
 import 'package:dih/symptom_checker_screen.dart';
 import 'package:dih/chatbot_screen.dart';
-import 'package:dih/voice_command_screen.dart';
 import 'package:dih/profile_page.dart' as profile;
 
 class CustomBottomNavBar extends StatefulWidget {
-  const CustomBottomNavBar({super.key});
+  final bool isDarkMode;
+  final VoidCallback toggleDarkMode;
+
+  const CustomBottomNavBar({
+    super.key,
+    required this.toggleDarkMode,
+    required this.isDarkMode,
+  });
 
   @override
   State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
@@ -16,16 +22,21 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
     with TickerProviderStateMixin {
   int selectedIndex = 0;
 
-  final List<Widget> _screens = [
-    HealthDashboardScreen(
-      isDarkMode: false, // Replace with your actual value or variable
-      toggleDarkMode: () {}, // Replace with your actual function or callback
-    ),
-    const SymptomCheckerScreen(),
-    const ChatbotScreen(),
-    const VoiceCommandScreen(),
-    const profile.ProfileScreen(),
-  ];
+  late final List<Widget> _screens;
+
+  @override
+  void initState() {
+    super.initState();
+    _screens = [
+      HealthDashboardScreen(
+        isDarkMode: widget.isDarkMode,
+        toggleDarkMode: widget.toggleDarkMode,
+      ),
+      const SymptomCheckerScreen(),
+      const ChatBotScreen(),
+      const profile.ProfileScreen(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +60,6 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar>
           BottomNavigationBarItem(
             icon: Icon(Icons.healing_outlined),
             label: 'Symptoms',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_outlined),
-            label: 'Chatbot',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.mic_none_outlined),

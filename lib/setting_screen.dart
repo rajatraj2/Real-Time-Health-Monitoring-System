@@ -1,4 +1,7 @@
+import 'package:dih/pdf_exporter.dart';
+import 'package:dih/screens/disease_history_screen.dart';
 import 'package:flutter/material.dart';
+ 
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -30,6 +33,26 @@ class SettingScreen extends StatelessWidget {
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
+          _buildSettingTile(
+            icon: Icons.history,
+            title: 'Disease History',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const DiseaseHistoryScreen()),
+              );
+            },
+          ),
+          _buildSettingTile(
+            icon: Icons.picture_as_pdf,
+            title: 'Export to PDF',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const PDFExporter()),
+              );
+            },
+          ),
           _buildSettingTile(
             icon: Icons.bluetooth_connected,
             title: 'Connect with IoT',

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'disease_predictor.dart';
 
 class SymptomCheckerScreen extends StatefulWidget {
   const SymptomCheckerScreen({super.key});
@@ -8,60 +10,106 @@ class SymptomCheckerScreen extends StatefulWidget {
 }
 
 class _SymptomCheckerScreenState extends State<SymptomCheckerScreen> {
-  final TextEditingController _controller = TextEditingController();
-  String _response = "";
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _heartRateController = TextEditingController();
+  final TextEditingController _spo2Controller = TextEditingController();
+  final TextEditingController _glucoseController = TextEditingController();
 
-  void _checkSymptoms() {
-    String input = _controller.text.toLowerCase();
+  String? _prediction;
+  bool _isLoading = false;
 
-    // Simple symptom matching logic (you can replace this with OpenAI API later)
-    if (input.contains("fever") && input.contains("cough")) {
-      _response =
-          "Possible Flu or Viral Infection. Please rest and stay hydrated.";
-    } else if (input.contains("headache") && input.contains("blurred vision")) {
-      _response = "May be Migraine or Eye Strain. Consider seeing a doctor.";
-    } else {
-      _response = "Sorry, unable to identify. Please consult a physician.";
+  late DiseasePredictor _predictor;
+
+  @override
+  void initState() {
+    super.initState();
+    _predictor = DiseasePredictor();
+    _predictor.loadModel();
+  }
+
+  Future<void> _predictDisease() async {
+    if (_formKey.currentState!.validate()) {
+      setState(() => _isLoading = true);
+      final heartRate = double.parse(_heartRateController.text);
+      final spo2 = double.parse(_spo2Controller.text);
+      final glucose = double.parse(_glucoseController.text);
+
+      final result = await _predictor.predict(
+        heartRate: heartRate,
+        spo2: spo2,
+        glucose: glucose,
+      );
+
+      setState(() {
+        _prediction = result;
+        _isLoading = false;
+      });
     }
+  }
 
-    setState(() {});
+  @override
+  void dispose() {
+    _heartRateController.dispose();
+    _spo2Controller.dispose();
+    _glucoseController.dispose();
+    super.dispose();
+  }
+
+  Widget _buildTextField(String label, TextEditingController controller) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: TextFormField(
+        controller: controller,
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+          labelText: label,
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+        ),
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Enter $label';
+          }
+          return null;
+        },
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Symptom Checker"),
-        backgroundColor: Colors.teal,
+        title: Text('Symptom Checker', style: GoogleFonts.poppins()),
+        centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            const Text(
-              "Describe your symptoms below:",
-              style: TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              controller: _controller,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "e.g. fever and cough since 2 days",
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              _buildTextField('Heart Rate', _heartRateController),
+              _buildTextField('SpO2', _spo2Controller),
+              _buildTextField('Glucose', _glucoseController),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: _isLoading ? null : _predictDisease,
+                child: _isLoading
+                    ? const CircularProgressIndicator(color: Colors.white)
+                    : const Text('Predict Disease'),
               ),
-              maxLines: 3,
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: _checkSymptoms,
-              child: const Text("Check Symptoms"),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              _response,
-              style: const TextStyle(fontSize: 16, color: Colors.deepPurple),
-            )
-          ],
+              const SizedBox(height: 20),
+              if (_prediction != null)
+                Text(
+                  'Prediction: $_prediction',
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.deepPurple,
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
